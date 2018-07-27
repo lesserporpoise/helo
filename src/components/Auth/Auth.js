@@ -6,7 +6,7 @@ class Auth extends Component {
     super()
     this.state={
       user:"",
-      pass:""
+      password:""
     }
   }
 
@@ -19,7 +19,7 @@ class Auth extends Component {
     this.setState({pass:val})
   }
   register(){
-    let wallaby =[this.state.user,this.state.pass];
+    let wallaby =[this.state.user,this.state.password];
     console.log(wallaby)
   axios.post('/api/register',wallaby).then((response)=>console.log(response))}
 

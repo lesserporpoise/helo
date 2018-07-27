@@ -6,6 +6,9 @@ const massive = require('massive')
 const app = express();
 const{SERVER_PORT , REACT_APP_DOMAIN , REACT_APP_CLIENT_ID , CLIENT_SECRET , SESSION_SECRET, CONNECTION_STRING} = process.env;
 const controller = require('./controller')
+const bodyParser = require('body-parser')
+
+app.use(bodyParser())
 
 app.use(session({
     secret: SESSION_SECRET,

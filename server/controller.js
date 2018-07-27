@@ -1,6 +1,7 @@
 module.exports={
     create:(req,res,next) => {const dbInstance = req.app.get('db');
-        dbInstance.create_user([req.body[0],req.body[1]])
+    const {name,password} = req.body;
+        dbInstance.create_user([name,password])
         .then(()=>res.sendStatus(200))
         .catch(err=>{
             res.status(500).send({errorMessage:"Nothing works, cause you suck."});
