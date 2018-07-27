@@ -22,7 +22,7 @@ massive(CONNECTION_STRING).then(db => {
 })
 
 app.post('/api/register',controller.create);
-// app.get('/api/',controller.getAll);
+app.get('/api/posts',controller.getPosts);
 // app.get('/api/:id',controller.getOne);
 // app.put('/api/:id',controller.update);
 // app.delete('/api/:id',controller.delete);

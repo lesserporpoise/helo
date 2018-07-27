@@ -7,7 +7,8 @@ module.exports={
             res.status(500).send({errorMessage:"Nothing works, cause you suck."});
             console.log(err)
         })
-}
+        dbInstance.return_user([name,password])
+},
 //     getOne:(req,res,next) => {const dbInstance = req.app.get('db');
 //         dbInstance.read_product(req.params.id)
 //         .then(product => res.status(200).send(product))
@@ -15,14 +16,14 @@ module.exports={
 //             res.status(500).send({errorMessage: "Ya done broke it dagnabbit..."});
 //             console.log(err)})
 // },
-//     getAll:(req,res,next) => {const dbInstance = req.app.get('db');
-//         dbInstance.read_products()
-//         .then(products=>res.status(200).send(products))
-//         .catch(err=>{
-//             res.status(500).send({errorMessage: "Ya done broke it dagnabbit..."});
-//             console.log(err)
-//         })
-// },
+    getPosts:(req,res,next) => {const dbInstance = req.app.get('db');
+        dbInstance.read_posts()
+        .then(products=>res.status(200).send(products))
+        .catch(err=>{
+            res.status(500).send({errorMessage: "Do Mo Betta!!!"});
+            console.log(err)
+        })
+},
 //     update:(req,res,next) => {const dbInstance = req.app.get('db');
 //         dbInstance.update_product(req.query.desc,req.params.id)
 //         .then(()=>res.sendStatus(200))

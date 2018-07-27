@@ -1,7 +1,7 @@
 const initialState = {
     name:'alpha',
     id:'id',
-    profilePicture:'insertURl'
+    profilePicture:'https://www.wirelesshack.org/wp-content/uploads/2018/01/How-To-Install-Doge-Kodi-Addon.jpg'
 
 }
 const UPDATE_STATE = "UPDATE_STATE";
