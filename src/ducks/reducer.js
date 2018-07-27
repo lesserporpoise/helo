@@ -1,7 +1,11 @@
 const initialState = {
-    bob:'alpha'
+    name:'alpha',
+    id:'id',
+    profilePicture:'insertURl'
 
 }
+
+const 
 
 export const actionName = (param) => ({
   type: type,
