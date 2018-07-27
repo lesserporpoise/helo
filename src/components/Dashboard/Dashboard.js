@@ -7,31 +7,48 @@ class Dashboard extends Component {
     this.state={
       allPosts:[],
       input:'',
-      checkbox:true
+      checkbox:true,
+      whichUser:0
     }
   }
 
   componentDidMount(){
     axios.get('/api/posts').then((response)=>{console.log(response);
-    this.setState({allPosts:response.data})})
+    this.setState({allPosts:response})})
   }
+
+  fetchPosts(){
+    axios.get('/api/posts').then((response)=>{console.log(response);
+      this.setState({allPosts:response});
+    console.log(this.state.allPosts.data[0])})
+  }
+  // fetchPosts(){
+  //   axios.get(`api/posts/${}`).then((response)=>{console.log(response);
+  //     this.setState({allPosts:response});
+  //   console.log(this.state.allPosts.data[0])})
+  // }
 
   render() {
 
-    this.state.allPosts.map((x,y,z)=>{})
+    // let valueArr = this.state.allPosts.data.slice(0)
+    
+    // this.state.allPosts.map(x=>valueArr.push(x))
+    // console.log(valueArr)
     return (
-      // this section is supposed to be able to make an axios call to the datab
-      // ase to get the listof posts . I don't know that we are going to add that feature today.
-      // we might very well just be sure to hit any other sim requirements for today.
+
       <div>
+        <button onClick={()=>this.fetchPosts()}>Retrieve Posts</button>
         <input placeholder="Search by Title"/>
         <button>Search</button>
         <button>Reset</button>
         <h5>My Posts</h5>
         <input type="checkbox"/>
         Dashboard
-        <div>{this.state.allPosts.map((x,y,z)=>{<div><p>Title:{x}</p><p>{y}</p><p>Name of OP</p></div>
-                                                })}</div>
+        {/* <div>{JSON.stringify(this.state.allPosts.data)}</div> */}
+        {/* <div>{valueArr?valueArr.map((x,y,z)=>{
+        <div><p>Title:{x}</p><p>{y}</p><p>--Name of OP--</p></div>
+        }):"waffle"}</div> */}
+        {/* <input onClick={()=>getOne()}/> */}
       </div>
     )
   }

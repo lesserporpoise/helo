@@ -9,13 +9,13 @@ module.exports={
         })
         dbInstance.return_user([name,password])
 },
-//     getOne:(req,res,next) => {const dbInstance = req.app.get('db');
-//         dbInstance.read_product(req.params.id)
-//         .then(product => res.status(200).send(product))
-//         .catch(err=>{
-//             res.status(500).send({errorMessage: "Ya done broke it dagnabbit..."});
-//             console.log(err)})
-// },
+    getOne:(req,res,next) => {const dbInstance = req.app.get('db');
+        dbInstance.read_product(req.params.id)
+        .then(product => res.status(200).send(product))
+        .catch(err=>{
+            res.status(500).send({errorMessage: "Ya done broke it dagnabbit..."});
+            console.log(err)})
+},
     getPosts:(req,res,next) => {const dbInstance = req.app.get('db');
         dbInstance.read_posts()
         .then(products=>res.status(200).send(products))
