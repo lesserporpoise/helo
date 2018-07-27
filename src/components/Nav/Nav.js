@@ -1,7 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-
-export default () => {
+import {connect} from 'react-redux'
+ 
+export function Nav(props){
+  console.log(props)
   return (
     <div>
       Nav
@@ -11,3 +13,12 @@ export default () => {
     </div>
   )
 }
+
+function mapStateToProps(state){
+return{
+  name:state.name,
+  profilePicture:state.profilePicture
+}
+}
+
+export default connect(mapStateToProps,{})(Nav)

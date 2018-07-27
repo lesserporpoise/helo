@@ -4,20 +4,27 @@ const initialState = {
     profilePicture:'insertURl'
 
 }
-
-const 
-
-export const actionName = (param) => ({
-  type: type,
-  payload: payload
-})
+const UPDATE_STATE = "UPDATE_STATE";
 
 
-export default (state = initialState, action) => {
+
+export function updateState(name,id,profilePicture){
+  return{
+  type: UPDATE_STATE,
+  payload:{name,id,profilePicture}
+  }
+}
+
+
+export default function reducer(state = initialState, action){
   switch (action.type) {
 
-  case typeName:
-    return { ...state }
+  case UPDATE_STATE:
+    return {
+      name:action.name,
+      id:action.id,
+      profilePicture:action.profilePicture
+    }
 
   default:
     return state
