@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './components/Nav/Nav'
+import {withRouter} from 'react-router'
+// import Post from './components/Post/Post'
+// import Form from './components/Form/Form'
+// import Dashboard from './components/Dashboard/Dashboard'
+// import Auth from './components/Auth/Auth'
+import route  from './route'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        {/* {this.props.location.pathname === "/" ? <h1>"You Get Nothing"</h1> :<Nav/>} */}
+        <Nav/>
+        {route}
       </div>
     );
   }
